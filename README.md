@@ -1,4 +1,5 @@
 Proyecto Web Django: "Libros en Línea"
+
 Este proyecto web Django llamado "Libros en Línea" está diseñado con una barra de navegación que dirige a diferentes páginas:
 Inicio, Libros, Buscar Libros y Contacto. Los usuarios pueden ver el listado de libros disponibles, registrar sus cuentas, buscar libros y enviar comentarios a los administradores del sitio.
 
