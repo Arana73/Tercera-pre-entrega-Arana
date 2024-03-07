@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Buscar Libros - Libros en Línea{% endblock %}
+
+{% block content %}
+    <h2>Buscar Libros</h2>
+    <form method="GET" action="">
+        <label for="busqueda">Buscar:</label>
+        <input type="text" id="busqueda" name="busqueda" value="{{ request.GET.busqueda }}">
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if resultados %}
+        <h3>Resultados:</h3>
+        <ul>
+            {% for libro in resultados %}
+                <li>{{ libro.titulo }} - {{ libro.autor }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron resultados para la búsqueda.</p>
+    {% endif %}
+{% endblock %}

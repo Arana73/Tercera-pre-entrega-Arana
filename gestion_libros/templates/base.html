@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros en Línea</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        .hero-image {
+            background-image: url("{% static 'assets/dia-del-libro_4_800x450.jpeg' %}");
+            background-size: cover;
+            background-position: center;
+            height: 400px; /* Ajusta la altura según tu necesidad */
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Libros en Línea</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'libros' %}">Libros</a></li>
+                <li><a href="{% url 'registro' %}">Registro</a></li>
+                <li><a href="{% url 'buscar' %}">Buscar Libros</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}       
+        {% endblock %}
+    </main>
+
+    <footer class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">© 2024 Libros en Línea. Todos los derechos reservados.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
